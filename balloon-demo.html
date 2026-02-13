@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CKEditor 5 – Balloon Demo</title>
+
+    <!-- OFFICIAL Balloon Editor Build -->
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/47.4.0/ckeditor5.css" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/47.4.0/ckeditor5.umd.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .editor-container {
+            max-width: 900px;
+        }
+        #editor:not(:focus) {
+            border: var(--ck-focus-ring);
+            border-color: var(--ck-color-base-border);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>CKEditor 5 Balloon (Demo-Equivalent)</h2>
+
+<div class="editor-container">
+    <div id="editor">
+        <h2>Urban Gardening and Community Health</h2>
+        <p>
+            Urban gardening initiatives have gained popularity in recent years as cities
+            seek sustainable solutions to food insecurity and public health challenges.
+        </p>
+        <p>
+            These programs encourage residents to grow fruits and vegetables in shared
+            spaces, promoting healthier diets, social interaction, and environmental awareness.
+        </p>
+    </div>
+</div>
+
+<script>
+const {
+	BalloonEditor,
+	Autoformat,
+	Bold,
+	Italic,
+	Underline,
+	BlockQuote,
+	Essentials,
+	Heading,
+	Indent,
+	IndentBlock,
+	List,
+	Paragraph,
+	TextTransformation
+} = CKEDITOR;
+
+BalloonEditor
+    .create( document.querySelector( '#editor' ),
+        {
+        licenseKey: "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE4MDEwMDc5OTksImp0aSI6ImQ5NDlmNDNmLTQzYjMtNGQ5Zi1iMTkyLWM1NTc5MGQ2NWM0MiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJyZW1vdmVGZWF0dXJlcyI6WyJQQiIsIlJGIiwiU0NIIiwiVENQIiwiVEwiLCJUQ1IiLCJJUiIsIlNVQSIsIkI2NEEiLCJMUCIsIkhFIiwiUkVEIiwiUEZPIiwiV0MiLCJGQVIiLCJCS00iLCJGUEgiLCJNUkUiXSwidmMiOiI4NzZiYTRiYyJ9.BqK1CF-TcIBOqr8Q_KkPKkZ5_7SDYoo8-tDrcOUoELaRYPTuFzMbxcFrj7hU5Wz1TUCit1rCbKAxJ3RwVqqGlQ",
+		plugins: [
+			Autoformat,
+			BlockQuote,
+			Bold,
+			Essentials,
+			Heading,
+			Indent,
+			IndentBlock,
+			Italic,
+			List,
+			Paragraph,
+			TextTransformation,
+			Underline,
+		],
+		toolbar: [
+			'undo',
+			'redo',
+			'|',
+			'heading',
+			'|',
+			'bold',
+			'italic',
+			'underline',
+			'|',
+			'blockQuote',
+			'|',
+			'bulletedList',
+			'numberedList',
+			'|',
+			'outdent',
+			'indent'
+		],
+		heading: {
+			options: [
+				{
+					model: 'paragraph',
+					title: 'Paragraph',
+					class: 'ck-heading_paragraph'
+				},
+				{
+					model: 'heading1',
+					view: 'h1',
+					title: 'Heading 1',
+					class: 'ck-heading_heading1'
+				},
+				{
+					model: 'heading2',
+					view: 'h2',
+					title: 'Heading 2',
+					class: 'ck-heading_heading2'
+				},
+				{
+					model: 'heading3',
+					view: 'h3',
+					title: 'Heading 3',
+					class: 'ck-heading_heading3'
+				},
+				{
+					model: 'heading4',
+					view: 'h4',
+					title: 'Heading 4',
+					class: 'ck-heading_heading4'
+				}
+			]
+		},
+		image: {
+			resizeOptions: [
+				{
+					name: 'resizeImage:original',
+					label: 'Default image width',
+					value: null
+				},
+				{
+					name: 'resizeImage:50',
+					label: '50% page width',
+					value: '50'
+				},
+				{
+					name: 'resizeImage:75',
+					label: '75% page width',
+					value: '75'
+				}
+			],
+			toolbar: [
+				'imageTextAlternative',
+				'toggleImageCaption',
+				'|',
+				'imageStyle:inline',
+				'imageStyle:wrapText',
+				'imageStyle:breakText',
+				'|',
+				'resizeImage'
+			]
+		},
+		link: {
+			addTargetToExternalLinks: true,
+			defaultProtocol: 'https://'
+		},
+		table: {
+			contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+		},
+	}
+)
+    .catch( error => {
+        console.error( error );
+    } );
+</script>
+
+</body>
+</html>
