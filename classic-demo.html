@@ -44,6 +44,7 @@
 </div>
 
 <script>
+
 const {
 	ClassicEditor,
 	Autoformat,
@@ -61,7 +62,8 @@ const {
 } = CKEDITOR;
 
 ClassicEditor
-    .create( document.querySelector( '#editor' ), {
+    .create( document.querySelector( '#editor' ),
+        {
         licenseKey: "eyJhbGciOiJFUzI1NiJ9.eyJleHAiOjE4MDEwMDc5OTksImp0aSI6ImQ5NDlmNDNmLTQzYjMtNGQ5Zi1iMTkyLWM1NTc5MGQ2NWM0MiIsInVzYWdlRW5kcG9pbnQiOiJodHRwczovL3Byb3h5LWV2ZW50LmNrZWRpdG9yLmNvbSIsImRpc3RyaWJ1dGlvbkNoYW5uZWwiOlsiY2xvdWQiLCJkcnVwYWwiXSwiZmVhdHVyZXMiOlsiRFJVUCIsIkUyUCIsIkUyVyJdLCJyZW1vdmVGZWF0dXJlcyI6WyJQQiIsIlJGIiwiU0NIIiwiVENQIiwiVEwiLCJUQ1IiLCJJUiIsIlNVQSIsIkI2NEEiLCJMUCIsIkhFIiwiUkVEIiwiUEZPIiwiV0MiLCJGQVIiLCJCS00iLCJGUEgiLCJNUkUiXSwidmMiOiI4NzZiYTRiYyJ9.BqK1CF-TcIBOqr8Q_KkPKkZ5_7SDYoo8-tDrcOUoELaRYPTuFzMbxcFrj7hU5Wz1TUCit1rCbKAxJ3RwVqqGlQ",
 		plugins: [
 			Autoformat,
@@ -163,32 +165,18 @@ ClassicEditor
 		},
 		table: {
 			contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
-		}
-	} )
-    .then( editor => {
-        /* SIMPLE ID SCRIPT */
-        const params = new URLSearchParams(window.location.search);
-        const pid = params.get('pid');
-
-        if (pid) {
-            localStorage.setItem('participantId', pid);
-            console.log("Participant ID:", pid);
-
-            const box = document.createElement("div");
-            box.style.position = "fixed";
-            box.style.top = "10px";
-            box.style.right = "10px";
-            box.style.background = "#fff";
-            box.style.border = "1px solid #ccc";
-            box.style.padding = "6px 10px";
-            box.style.zIndex = "9999";
-            box.innerText = "ID: " + pid;
-            document.body.appendChild(box);
-        }
-    } )
+		},
+	}
+)
     .catch( error => {
         console.error( error );
     } );
+const params = new URLSearchParams(window.location.search);
+const pid = params.get('pid');
+
+if (pid) {
+    localStorage.setItem('participantId', pid);
+}
 </script>
 
 </body>
