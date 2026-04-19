@@ -9,44 +9,81 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/47.4.0/ckeditor5.umd.js"></script>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-        }
-        .editor-container {
-            max-width: 900px;
-        }
-        #editor:not(:focus) {
-            border: var(--ck-focus-ring);
-            border-color: var(--ck-color-base-border);
-            outline: none;
-        }
-    </style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 30px;
+		}
+
+		.page-layout {
+			display: flex;
+			gap: 20px;
+			align-items: flex-start;
+		}
+
+		.task-box {
+			width: 260px;
+			border: 1px solid #ccc;
+			padding: 15px;
+			background: #f9f9f9;
+			box-sizing: border-box;
+		}
+
+		.task-box h3 {
+			margin-top: 0;
+		}
+
+		.editor-container {
+			flex: 1;
+			max-width: 900px;
+		}
+
+		#editor:not(:focus) {
+			border: var(--ck-focus-ring);
+			border-color: var(--ck-color-base-border);
+			outline: none;
+		}
+	</style>
 </head>
 <body>
 
 <h2>Balloon Editor</h2>
 
-<div class="editor-container">
-    <div id="editor">
-        <h2>Artificial Intelligence in Education</h2>
-        <p>
-            Artificial intelligence is quickly changing how students learn in schools and universities today.
-			These new digital tools are very fast, and they can be incredibly helpful for researching complex topics or brainstorming new ideas.
-			However, many teachers are starting to worry that students are using them to do all of their homework instead of really understanding the subject. 
-			Important Note: Relying entirely on smart software to write your essays can damage your ability to think critically and solve problems.
-			Schools want students to use these new tools as a helpful guide or a smart tutor.
-        </p>
-        <p>
-            Technology should boost a student's own curiosity and creativity, not do all the heavy lifting for them. - Dr. Sarah Jenkins. 
-			Even with all this new technology, a good study routine still requires a healthy mix of basic and digital tools.To set up a great learning environment, you should gather a paper notebook, a fast laptop, a printed class schedule, and a quiet desk. 
-			Using these everyday items together with smart software helps you focus better.
-        </p>
-		<p>
-			Education is changing faster than ever before, and adapting to these tools is a necessary step. In the end, learning how to balance your own human effort with smart software will prepare you for a highly successful career.
-		</p>
-		</p>
+<div class="page-layout">
+
+    <!-- EDITOR (LEFT SIDE) -->
+    <div class="editor-container">
+        <div id="editor">
+            <h2>Artificial Intelligence in Education</h2>
+            <p>
+                Artificial intelligence is quickly changing how students learn in schools and universities today.
+                These new digital tools are very fast, and they can be incredibly helpful for researching complex topics or brainstorming new ideas.
+                However, many teachers are starting to worry that students are using them to do all of their homework instead of really understanding the subject. 
+                Important Note: Relying entirely on smart software to write your essays can damage your ability to think critically and solve problems.
+                Schools want students to use these new tools as a helpful guide or a smart tutor.
+            </p>
+            <p>
+                Technology should boost a student's own curiosity and creativity, not do all the heavy lifting for them. - Dr. Sarah Jenkins. 
+                Even with all this new technology, a good study routine still requires a healthy mix of basic and digital tools. To set up a great learning environment, you should gather a paper notebook, a fast laptop, a printed class schedule, and a quiet desk. 
+                Using these everyday items together with smart software helps you focus better.
+            </p>
+            <p>
+                Education is changing faster than ever before, and adapting to these tools is a necessary step. In the end, learning how to balance your own human effort with smart software will prepare you for a highly successful career.
+            </p>
+        </div>
     </div>
+
+    <!-- TASK BOX (RIGHT SIDE) -->
+    <div class="task-box">
+        <h3>Tasks</h3>
+        <ol>
+            <li>Adjust the first line so it clearly introduces the document</li>
+            <li>Make the "Important Note" stand out</li>
+            <li>Organise the items into a clean list</li>
+            <li>Make Dr Jenkins’ statement look different</li>
+            <li>Move the last sentence to the right</li>
+        </ol>
+    </div>
+
 </div>
 
 <script>
