@@ -97,17 +97,6 @@ if (pid && pid.trim() != '') {
 	console.warn('no participant ID found in URL.');
 }
 
-const idBox = document.createElement('div');
-idBox.textContent = 'PID: ' + (pid || 'not found');
-idBox.style.position = 'fixed';
-idBox.style.bottom = '10px';
-idBox.style.right = '10px';
-idBox.style.background = '#eeeeee';
-idBox.style.padding = '6px 10px';
-idBox.style.fontSize = '12px';
-idBox.style.border = '1px solid #cccccc';
-idBox.style.zIndex = '9999';
-document.body.appendChild(idBox);
 
 
 const {
